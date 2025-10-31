@@ -7,9 +7,9 @@ on:
 
 env:
   IMAGE_REPO: ${{ secrets.DOCKERHUB_USERNAME }}
-  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/notes-app
-  IMAGE_SHA: ${{ secrets.DOCKERHUB_USERNAME }}/notes-app:${{ github.sha }}
-  IMAGE_LATEST: ${{ secrets.DOCKERHUB_USERNAME }}/notes-app:latest
+  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/devsecops
+  IMAGE_SHA: ${{ secrets.DOCKERHUB_USERNAME }}/devsecops:${{ github.sha }}
+  IMAGE_LATEST: ${{ secrets.DOCKERHUB_USERNAME }}/devsecops:latest
 
 jobs:
   pytest:

@@ -26,6 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt || true
           pip install pytest pytest-cov httpx
+      - name: Export PYTHONPATH so tests can import `app`
+        run: |
+          echo "PYTHONPATH=${GITHUB_WORKSPACE}" >> $GITHUB_ENV
+          echo "PYTHONPATH set to: ${GITHUB_WORKSPACE}"
       - name: Run pytest + coverage (xml)
         run: |
           pytest -q --maxfail=1 --disable-warnings --cov=app --cov-report=xml:coverage-python.xml
